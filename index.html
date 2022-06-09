@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ADN</title>
+
+		<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+	</head>
+	<body>
+		<div style="width:80%;background: #fff;border: 1px solid rgba(0, 0, 0, 0.0625);padding: 0 10px;margin-top: 30px;">
+
+<section>
+  <!--for demo wrap-->
+  <h1>Fixed Table header</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr class="deb">
+          <th>Debit</th>
+          <th>200</th>
+          <th>4200</th>
+          <th>500</th>
+          <th>54</th>
+          <th width="200">Table CA</th>
+          <th width="50">Etat</th>
+        </tr>
+        <tr>
+          <th>NUll</th>
+          <th>Null</th>
+          <th>Null</th>
+          <th>Null</th>
+          <th>Null</th>
+          <th width="200">Table CA</th>
+          <th width="500">Etat</th>
+
+        </tr>
+        <tr>
+        	<td style="background: rgba(0, 0, 0,0);border:none;"></td>
+          	<td>Janvie</td>
+          <td>Fev </td>
+          <td>Mars</td>
+          <td>Apr</td>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+</section>
+</div>
+
+
+<div style="width: 82%;margin-top: 20px; display: flex;justify-content: space-between;">
+
+	<div style="width: 45%; background: #fff;border: 1px solid rgba(0, 0, 0, 0.0625) !important;padding: 10px;">
+				<h1>Debit</h1>
+				<div class="tbl-header">
+			    <table cellpadding="0" cellspacing="0" border="0">
+			      <thead id='debits'>
+			        <tr class="deb">
+			          <th>date Dechange</th>
+			          <th>montant</th>
+			          <th>Forfais</th>
+			          <th width="10">-</th>
+
+			        </tr>
+			        <tr>
+			          <th>NUll</th>
+			          <th>Null</th>
+			          <th>Null</th>
+			          <th width="10">-</th>
+			        </tr>
+			      </thead>
+
+			      <tbody>
+			      	<tr>
+			          	<th style="padding: 0px;"><input placeholder="Date" id='DDebit' type="text" name=""></th>
+			          	<th style="padding: 0px;"><input placeholder="montant" id='MDebit' type="text" name=""></th>
+						<th style="padding: 0px;"><input placeholder="Forfais" id='FDebit' type="text" name=""></th>
+			          	<th style="padding: 0px;"><button onclick="addDebit()">+</button></th>
+			        </tr>
+			      </tbody>
+			    </table>
+			  </div>
+			</div>
+			<div style="width: 45%; background: #fff;border: 1px solid rgba(0, 0, 0, 0.0625) !important;padding: 10px;">
+				<h1>Credit</h1>
+				<p>Lore is an American horror anthology television series developed by the creator of the podcast of the same name, Aaron Mahnke, with Valhalla Entertainment and Propagate Content. The series airs through Amazon Prime Video and follows the podcast's anthology format with each episode featuring a new </p>
+				<button class="btn">Get Credit</button>
+			</div>
+		</div>
+
+
+<div style="width: 82%;margin-top: 20px;background: #fff;border: 1px solid rgba(0, 0, 0, 0.0625) !important;padding: 10px;">
+	<h1>Bar Chart HTML</h1>
+<canvas id="myChart" width="400" height="100"></canvas>
+</div>
+
+
+	</body>
+</html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+<script type="text/javascript">
+function addDebit() 
+{
+	ddd = document.getElementById('debits');
+	DD = document.getElementById('DDebit').value;
+	DM = document.getElementById('MDebit').value;
+	FD = document.getElementById('FDebit').value;
+
+
+	ddd.innerHTML += '<tr><th>'+DD+'</th><th>'+DM+'</th><th>'+FD+'</th><th>-</th></tr>';
+}
+
+</script>
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+ 
+
